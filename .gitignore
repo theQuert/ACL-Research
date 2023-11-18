@@ -2,3 +2,5 @@
 .ipynb_checkpoints/*
 *.bib
 ACT2_dataset.tsv
+~$baselines.xlsx
+test*.py
