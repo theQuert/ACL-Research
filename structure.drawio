@@ -1,50 +1,92 @@
-<mxfile host="Electron" modified="2023-11-15T01:25:35.111Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.6.8 Chrome/114.0.5735.289 Electron/25.5.0 Safari/537.36" etag="ZRC_06h1ZsUunOnQLOO_" version="21.6.8" type="device">
+<mxfile host="Electron" modified="2023-11-21T13:07:06.340Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.6.8 Chrome/114.0.5735.289 Electron/25.5.0 Safari/537.36" etag="YY4mggsiqB3Ud0dT427I" version="21.6.8" type="device">
   <diagram name="Page-1" id="wK548PFpyx461JpntyU3">
-    <mxGraphModel dx="1703" dy="481" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1734" dy="499" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="siveh0keMg_b1OPbo5xY-36" value="Methods (masked): Extract from each abstracts,&amp;nbsp;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+        <mxCell id="siveh0keMg_b1OPbo5xY-36" value="Methods (masked): Extract from each abstracts,&amp;nbsp;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="80" y="348" width="280" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="siveh0keMg_b1OPbo5xY-37" value="Background + Topic + Known Article -&amp;gt; Methods&lt;br&gt;Background (Extract from each abstracts) + Topic (Article Title) + Known Article (Cited) -&amp;gt; Methods (Extract from&amp;nbsp;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+        <mxCell id="siveh0keMg_b1OPbo5xY-37" value="Background + Topic + Known Article -&amp;gt; Methods&lt;br&gt;Background (Extract from each abstracts) + Topic (Article Title) + Known Article (Cited) -&amp;gt; Methods (Extract from&amp;nbsp;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="-20" y="405" width="620" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="siveh0keMg_b1OPbo5xY-38" value="Methods + Background -&amp;gt; Topic" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+        <mxCell id="siveh0keMg_b1OPbo5xY-38" value="Methods + Background -&amp;gt; Topic" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="150" y="460" width="190" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="siveh0keMg_b1OPbo5xY-39" value="Objectives + Methods -&amp;gt; Probability" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+        <mxCell id="siveh0keMg_b1OPbo5xY-39" value="Objectives + Methods -&amp;gt; Probability" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="150" y="500" width="210" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="siveh0keMg_b1OPbo5xY-42" value="Background Tracking?" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+        <mxCell id="siveh0keMg_b1OPbo5xY-42" value="Background Tracking?" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="515" y="300" width="140" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="siveh0keMg_b1OPbo5xY-43" value="Objectives + (Background + Methods) -&amp;gt; Results" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="siveh0keMg_b1OPbo5xY-43" value="Objectives + (Background + Methods) -&amp;gt; Results" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="75" y="535" width="320" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="siveh0keMg_b1OPbo5xY-44" value="Background:&amp;nbsp;&lt;br&gt;1. Extract background from citing abstracts&lt;br&gt;2. Extract methods from citing abstracts&lt;br&gt;3. Citation Contexts&lt;br&gt;4. Extract background from cited abstracts" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+        <mxCell id="siveh0keMg_b1OPbo5xY-44" value="Background:&amp;nbsp;&lt;br&gt;1. Extract background from citing abstracts&lt;br&gt;2. Extract methods from citing abstracts&lt;br&gt;3. Extract background from cited abstracts&lt;br&gt;4. Citation Contexts" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="490" y="480" width="250" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="siveh0keMg_b1OPbo5xY-46" value="Result (B) + Background (Citation Contexts + B) + Objectives (A)&amp;nbsp; + Methods (B) -&amp;gt; Result (A)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontStyle=1" vertex="1" parent="1">
+        <mxCell id="siveh0keMg_b1OPbo5xY-46" value="Result (B) + Background (Citation Contexts + B) + Objectives (A)&amp;nbsp; + Methods (B) -&amp;gt; Result (A)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="-75" y="650" width="550" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="siveh0keMg_b1OPbo5xY-47" value="Background (1,2,3,4) + Objectives (A) + Known Article (full-content) -&amp;gt; Methods&lt;br&gt;hyp: extracted from abstracts with classifier. -&amp;gt; Generate with ChatGPT.&lt;br&gt;ref: extracted from abstracts with classifier." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontStyle=1" vertex="1" parent="1">
+        <mxCell id="siveh0keMg_b1OPbo5xY-47" value="Background (1,2,3,4) + Objectives (A) + Known Article (full-content) -&amp;gt; Methods&lt;br&gt;hyp: extracted from abstracts with classifier. -&amp;gt; Generate with ChatGPT.&lt;br&gt;ref: extracted from abstracts with classifier." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="-75" y="673" width="470" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="siveh0keMg_b1OPbo5xY-49" value="Methods:&amp;nbsp;&lt;br&gt;1. Extract methods from citing abstracts&lt;br&gt;2. Citation Contexts (optional)" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+        <mxCell id="siveh0keMg_b1OPbo5xY-49" value="Methods:&amp;nbsp;&lt;br&gt;1. Extract methods from citing abstracts&lt;br&gt;2. Citation Contexts (optional)" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="490" y="575" width="230" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="siveh0keMg_b1OPbo5xY-50" value="Methods + Background (1,2,3,4) -&amp;gt; Topic" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontStyle=1" vertex="1" parent="1">
+        <mxCell id="siveh0keMg_b1OPbo5xY-50" value="Methods + Background (1,2,3,4) -&amp;gt; Topic" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="-75" y="820" width="250" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="siveh0keMg_b1OPbo5xY-51" value="Objectives + Methods -&amp;gt; Probability" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+        <mxCell id="siveh0keMg_b1OPbo5xY-51" value="Objectives + Methods -&amp;gt; Probability" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="-75" y="850" width="210" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="siveh0keMg_b1OPbo5xY-52" value="&lt;b&gt;&lt;br&gt;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+        <mxCell id="siveh0keMg_b1OPbo5xY-52" value="&lt;b&gt;&lt;br&gt;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="-50" y="718" width="20" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="siveh0keMg_b1OPbo5xY-53" value="A: Newer&lt;br&gt;B: Older" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontStyle=1" vertex="1" parent="1">
+        <mxCell id="siveh0keMg_b1OPbo5xY-53" value="A: Newer&lt;br&gt;B: Older" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="-5" y="610" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="bfhdTeOUfJR36sRf77Ng-1" value="Citing Abstracts" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="300" y="770" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="bfhdTeOUfJR36sRf77Ng-2" value="Cited Abstracts" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="300" y="800" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="bfhdTeOUfJR36sRf77Ng-3" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="410" y="798" as="sourcePoint" />
+            <mxPoint x="510" y="798" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bfhdTeOUfJR36sRf77Ng-4" value="Classification" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="410" y="800" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="bfhdTeOUfJR36sRf77Ng-5" value="Background" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="510" y="748" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="bfhdTeOUfJR36sRf77Ng-7" value="Objectives" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="515" y="780" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="bfhdTeOUfJR36sRf77Ng-9" value="Methods" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="520" y="820" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="bfhdTeOUfJR36sRf77Ng-10" value="Hypothesis" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="730" y="760" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="bfhdTeOUfJR36sRf77Ng-11" value="Reference" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="595" y="820" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="bfhdTeOUfJR36sRf77Ng-12" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.6;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="bfhdTeOUfJR36sRf77Ng-10">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="600" y="778" as="sourcePoint" />
+            <mxPoint x="650" y="728" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bfhdTeOUfJR36sRf77Ng-14" value="zero-shot" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="620" y="770" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="bfhdTeOUfJR36sRf77Ng-15" value="&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Extract the background (multiple sources), objectives and cited methods (reference) to form csv file with two columns. (raw_data.csv) &lt;b&gt;DONE&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;Keep instances with references -&amp;gt; (data.csv) &lt;b&gt;DONE&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;Split data into train and test set -&amp;gt; (data_train.csv, data_test.csv) &lt;b&gt;DONE indices are not ordered.&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;Scoring ground truth on &quot;all&quot; data and &quot;test&quot; data (data.csv and data_test.csv) &lt;b&gt;DONE&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Update csv files (train, test) with columns (Background, Objectives, References). Reference (Methods from cited abstracts) &lt;b&gt;DONE&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;Create `merge.json` with above info and prompt. (with restricted output length, calculate the mean length of references)&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;Fine-tune with Vicuna-13B. (calculate the score with ground truth, fine-tuning)&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;Do zero-shot again with restricted output length. (GPT-3.5)&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="200" y="925" width="770" height="130" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
