@@ -1,0 +1,1 @@
+I have gathered information regarding the existing BACKGROUND and OBJECTIVE of current scholarly research. You have to return the research methodology that effectively bridges the gap between this BACKGROUND knowledge and OBJECTIVE. Remember, the output length is restricted to about 35 tokens.
