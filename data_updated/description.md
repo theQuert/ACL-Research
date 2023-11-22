@@ -1,0 +1,9 @@
+- `raw_data.csv`: data without filtering instances with no references.
+- `data.csv`: original data.
+- `data.hyp`, `data.ref`: split hypothesis and references from original data. (for scoring.)
+- `data_train.csv`: split original data into 70%.
+- `data_test.csv`, `data_test.hyp`, `data_test.ref`: split original data into 30%.
+- `merge_train.json`: combine the train data to json format for finetuning Vicuna. (deprecated): data is re-split in Vicuna.
+- `merge_all.json`: combine the train and test data and convert to json format. Later, split into `train.pt` and `test.pt` by Vicuna.
+- `train.pt`, `test.pt`: all data is splitted into train and test data.
+- `data_test_vicuna.hyp`, `data_test_vicuna'.ref`: Updated test data according to splitting function from Vicuna.
