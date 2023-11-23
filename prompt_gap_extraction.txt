@@ -1,8 +1,0 @@
-I have two versions of abstracts from two papers, newer and older ones:
-
-""" Newer Version
-"""
-
-""" Older Vesion
-"""
-After reviewing the provided abstracts, please identify any improvements or advancements made in the newer paper compared to the older paper ,and highlight any new methods or techniques proposed in the newer paper that were not present in the older paper.
