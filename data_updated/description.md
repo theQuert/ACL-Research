@@ -6,4 +6,5 @@
 - `merge_train.json`: combine the train data to json format for finetuning Vicuna. (deprecated): data is re-split in Vicuna.
 - `merge_all.json`: combine the train and test data and convert to json format. Later, split into `train.pt` and `test.pt` by Vicuna.
 - `train.pt`, `test.pt`: all data is splitted into train and test data.
-- `data_test_vicuna.hyp`, `data_test_vicuna'.ref`: Updated test data according to splitting function from Vicuna.
+- `data_test_vicuna.hyp`, `data_test_vicuna.ref`: Updated test data according to splitting function from Vicuna.
+- `data_test_gpt`: GPT-3.5 generation with restricted length on `data_test.hyp` with prompt input. (zero-shot with GPT-3.5)
