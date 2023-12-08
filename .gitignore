@@ -6,3 +6,4 @@ ACT2_dataset.tsv
 test*.py
 py.ipynb
 .*
+*.pdf
