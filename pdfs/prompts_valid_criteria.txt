@@ -1,0 +1,8 @@
+given reference
+gpt-4 <-
+multiple criteria
+- similarity
+- reasonable
+- valid solutions
+- innovative
+- challenges, solutions
