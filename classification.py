@@ -35,7 +35,7 @@ def cited_class(abstract):
     return background, objs, methods
 
 def call_gpt(prompt):
-    openai.api_key = "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"
+    openai.api_key = "sk-"
     inputs_for_gpt = " ".join(prompt.split()[:15000])
 
     completion = openai.ChatCompletion.create(
