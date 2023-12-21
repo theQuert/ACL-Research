@@ -5,4 +5,13 @@ multiple criteria
 - reasonable
 - valid solutions
 - innovative
-- challenges, solutions
+
+prompt = """
+As a researcher of a computer science department major in natural language processing, I have human generated research METHOD based on given ABSTRACT and METHOD. Now, I have machine generated method, please calculate the similarity between human generated method and machine generated method and return if the machine gerneration is reasonable to latent solution in percentage.
+\n
+### Human Generated METHOD: \n
+
+### Machine Generated METHOD: \n
+
+"""
+
