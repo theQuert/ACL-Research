@@ -44,3 +44,13 @@ To prevent generative Large Language Models (LLMs) from producing similar contex
 10. **Ethical and Bias Considerations**: Research into the ethical implications and inherent biases of LLMs is crucial. Ensuring that the model does not replicate or amplify biases in its training data is important for generating fair and unbiased content.
 
 In summary, preventing generative LLMs from producing similar or summary-like content involves a combination of training techniques, model architecture adjustments, incorporation of external knowledge, and continuous evaluation for diversity and novelty. Research in these areas is ongoing and rapidly evolving, offering promising avenues for improving the capabilities of generative models.
+-- 
+chain of thought on scientific paper
+
+
+topic inputs/related research -> extract 3 best methods -> 3 ideas/methods -> eval if valid, and results
+
+other work: methods optimization with chain-of-thought
+
+2024/01/04
+build interface with Gradio
