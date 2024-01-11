@@ -54,3 +54,7 @@ other work: methods optimization with chain-of-thought
 
 2024/01/04
 build interface with Gradio
+
+2024/01/11
+5 methods -> scoring -> refine
+method eval -> results eval (given problems and methods)
