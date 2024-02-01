@@ -1,4 +1,4 @@
-# Research Method Recommendation
+# Research Method Generation 
 - Data is derived from [**ACL Anthology**](https://aclanthology.org/)
 
 ## OpenAI Data Acknowledgment
