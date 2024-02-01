@@ -261,7 +261,37 @@ PREDICTED RESULT: \n
         {"role": "user", "content": eval_inputs}
     ])
     self_eval = completion.choices[0].message.content
-    return str(response), str(methods)
+    ask_repo = f"""
+According to the following recommended solutions to solve research problems, please recommend the top-5 related keywords aims to search respositories on GitHub. Return only the fine-grained related keywords.
+```
+{methods}
+```
+KEYWORDS:
+    """
+
+    ask_for_code = f"""
+According to the following recommended solutions to solve research problems, please generate python code including the preprocessing, list the steps in detailed, and the usabled evaluation code. If some of the steps cannot be generated in python code with pytorch implementation, please list the the code in general. 
+Solutions:
+```
+{methods}
+```
+Return the python code:
+### CODE:
+
+    """ 
+    completion = openai.chat.completions.create(model = "gpt-4",
+    messages = [
+        {"role": "user", "content": ask_repo}
+    ])
+    rec_repo = completion.choices[0].message.content
+
+    completion = openai.chat.completions.create(model = "gpt-4",
+    messages = [
+        {"role": "user", "content": ask_for_code}
+    ])
+    gen_code = completion.choices[0].message.content
+
+    return str(response), str(methods), str(rec_repo), str(gen_code)
 
     
 def main(input_key, input_article, input_trigger):
@@ -288,7 +318,7 @@ def main(input_key, input_article, input_trigger):
     modified = "TRUE"
     device = "cuda" if torch.cuda.is_available() else "cpu"
 
-    gen_sols, methods = call_gpt(input_abs, input_work)
+    gen_sols, methods, rec_repo, gen_code = call_gpt(input_abs, input_work)
 
     """
     # Predictions
@@ -377,7 +407,7 @@ def main(input_key, input_article, input_trigger):
     # return formatted_input, updated_color_sents
     return old_color_sents, updated_color_sents
     """
-    return gen_sols, methods
+    return gen_sols, methods, rec_repo, gen_code
 
 def copy_to_clipboard(t):
     with open("./util/experiments/updated_article.txt", "r") as f:
@@ -417,7 +447,7 @@ with gr.Blocks() as demo:
             </h1>
             </div>"""
         )
-    with gr.Tab("Generation in detail"):
+    with gr.Tab("Generation"):
         gr.Markdown("### Examples could be found in the subsequent tab.")
         gr.Markdown("#### Enter OpenAI API Key for further processing...")
         input_key = gr.Textbox(label="OpenAI API Key", lines=1, placeholder="sh-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
@@ -427,7 +457,7 @@ with gr.Blocks() as demo:
             gr.ClearButton([input_1, input_2])
             btn = gr.Button(value="Submit")
         with gr.Row():
-            output_0 = gr.Textbox(label="Generate 5 possible solutions:", show_copy_button=True, show_label=True, interactive=False)
+            output_0 = gr.Textbox(label="Generate 5 Possible Solutions:", show_copy_button=True, show_label=True, interactive=False)
 
         """
         with gr.Row():
@@ -437,15 +467,19 @@ with gr.Blocks() as demo:
         """
 
         with gr.Row():
-            output = gr.Textbox(label="Generation with self-evaluation", show_copy_button=True, show_label=True)
+            output = gr.Textbox(label="Generation with Self-Evaluation", show_copy_button=True, show_label=True)
+        with gr.Row():
+            rec_repo = gr.Textbox(label="GitHub Repositories Recommendation", show_copy_button=True, show_label=True)
+        with gr.Row():
+            gen_code = gr.Code(language="python", lines=5, label="Code")
 
         # with gr.Row():
         #     output_2 = gr.Textbox(label="Self-Eval", show_copy_button=True)
-        btn.click(fn=main, inputs=[input_key, input_1, input_2], outputs=[output, output_0])
-        btn_copy = gr.Button(value="Copy Generated Methods to Clipboard")
-        btn_copy.click(fn=copy_to_clipboard, inputs=[output_0], outputs=[])
+        btn.click(fn=main, inputs=[input_key, input_1, input_2], outputs=[output, output_0, rec_repo, gen_code])
+        # btn_copy = gr.Button(value="Copy Generated Methods to Clipboard")
+        # btn_copy.click(fn=copy_to_clipboard, inputs=[output_0], outputs=[])
 
-        com_1_value, com_2_value = "Pls finish article updating, then click the button above", "Pls finish article updating, then click the button above."
+        com_1_value, com_2_value = "Pleas finish article updating, then click the button above", "Pls finish article updating, then click the button above."
    #  with gr.Tab("Compare between versions"):
    #      btn_com = gr.Button(value="Differences Highlighting")
    #      with gr.Row():
@@ -453,7 +487,7 @@ with gr.Blocks() as demo:
    #          com_2 = gr.Textbox(label="Updated Paragraphs", value=com_2_value, lines=15)
    #      btn_com.click(fn=compare_versions, inputs=[], outputs=[com_1, com_2])
     with gr.Tab("Examples"):
-        gr.Markdown("## Input Examples")
+        gr.Markdown("## Examples")
         gr.Markdown("### Two examples are provided below; please select one to auto-populate the inputs.")
         gr.Markdown("### Kindly select one of the provided examples, then return to the 'Article Updating' mode to assess the outcomes.")
         gr.Examples(
