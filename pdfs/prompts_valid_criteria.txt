@@ -62,3 +62,10 @@ method eval -> results eval (given problems and methods)
 2024/01/25
 code generation
 github repo recommendation -> search with keywords extracted from inputs
+
+2024/02/01
+Usability
+Rationality
+Innovation
+
+#examples: 20 up
