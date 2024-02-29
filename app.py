@@ -29,6 +29,8 @@ import gradio as gr
 import pyperclip
 # from openai import OpenAI
 import openai
+import google.generativeai as genai
+import requests
 
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 from transformers import TrainingArguments, Trainer
@@ -112,6 +114,19 @@ def decode(paragraphs_needed):
     contexts = [str(pipe(paragraph)) for paragraph in paragraphs_needed]
     return contexts
 
+def fetch_top_repos(keywords):
+    url = "https://api.github.com/search/repositories"
+    qu = f"{keywords}:python"
+    query = {
+        "q": qu,
+        "sort": "stars",
+        "order": "desc"
+    }
+    response = requests.get(url, params=query)
+    data = response.json()
+    top_repos = [item['name'] for item in data['items'][:5]]
+    return '\n'.join(top_repos)
+
 def split_article(article, trigger):
     if len(article.split("\\n ")) > len(article.split("\\\\c\\\\c")):
         paragraphs = article.split("\\n ")
@@ -125,6 +140,9 @@ def split_article(article, trigger):
 
 def config():
     load_dotenv()
+
+def evaluation():
+    pass
 
 def call_gpt(input_abs, input_work):
     # openai.api_key = os.environ.get("OPENAI_KEY")
@@ -283,7 +301,10 @@ Return the python code:
     messages = [
         {"role": "user", "content": ask_repo}
     ])
-    rec_repo = completion.choices[0].message.content
+    keywords = completion.choices[0].message.content
+    # keywords = keywords.split("\n")
+    # rec_repo = fetch_top_repos(keywords[0])
+    rec_repo = keywords
 
     completion = openai.chat.completions.create(model = "gpt-4",
     messages = [
@@ -293,8 +314,9 @@ Return the python code:
 
     return str(response), str(methods), str(rec_repo), str(gen_code)
 
+
     
-def main(input_key, input_article, input_trigger):
+def main(input_key, input_article, input_trigger, input_ref):
     openai.api_key = input_key
     input_abs = input_article
     input_work = input_trigger
@@ -319,6 +341,8 @@ def main(input_key, input_article, input_trigger):
     device = "cuda" if torch.cuda.is_available() else "cpu"
 
     gen_sols, methods, rec_repo, gen_code = call_gpt(input_abs, input_work)
+    eval_ref = evaluation(input_ref)
+
 
     """
     # Predictions
@@ -407,7 +431,7 @@ def main(input_key, input_article, input_trigger):
     # return formatted_input, updated_color_sents
     return old_color_sents, updated_color_sents
     """
-    return gen_sols, methods, rec_repo, gen_code
+    return gen_sols, methods, rec_repo, gen_code, eval_ref
 
 def copy_to_clipboard(t):
     with open("./util/experiments/updated_article.txt", "r") as f:
@@ -423,14 +447,68 @@ def compare_versions():
         new = new.replace("[ADD]", "")
     return old, new
 
+
+
 with open("../NetKUp/txt/abstract.txt", "r") as f:
-    exin_1 = f.read()
+    exin_0 = f.read()
 with open("../NetKUp/txt/work.txt", "r") as f:
-    trigger_1 = f.read()
+    trigger_0 = f.read()
 with open("./examples/non_update_2.txt", "r") as f:
-    exin_2 = f.read()
+    exin_1 = f.read()
 with open("./examples/trigger_2.txt", "r") as f:
+    trigger_1 = f.read()
+with open("../NetKUp/txt/abstract_01.txt", "r") as f:
+    exin_2 = f.read()
+with open("../NetKUp/txt/work_01.txt", "r") as f:
     trigger_2 = f.read()
+with open("../NetKUp/txt/abstract_02.txt", "r") as f:
+    exin_3 = f.read()
+with open("../NetKUp/txt/work_02.txt", "r") as f:
+    trigger_3 = f.read()
+with open("../NetKUp/txt/abstract_03.txt", "r") as f:
+    exin_4 = f.read()
+with open("../NetKUp/txt/work_03.txt", "r") as f:
+    trigger_4 = f.read()
+with open("../NetKUp/txt/abstract_04.txt", "r") as f:
+    exin_5 = f.read()
+with open("../NetKUp/txt/work_04.txt", "r") as f:
+    trigger_5 = f.read()
+with open("../NetKUp/txt/abstract_05.txt", "r") as f:
+    exin_6 = f.read()
+with open("../NetKUp/txt/work_05.txt", "r") as f:
+    trigger_6 = f.read()
+with open("../NetKUp/txt/abstract_06.txt", "r") as f:
+    exin_7 = f.read()
+with open("../NetKUp/txt/work_06.txt", "r") as f:
+    trigger_7 = f.read()
+with open("../NetKUp/txt/abstract_07.txt", "r") as f:
+    exin_8 = f.read()
+with open("../NetKUp/txt/work_07.txt", "r") as f:
+    trigger_8 = f.read()
+with open("../NetKUp/txt/abstract_08.txt", "r") as f:
+    exin_9 = f.read()
+with open("../NetKUp/txt/work_08.txt", "r") as f:
+    trigger_9 = f.read()
+with open("../NetKUp/txt/ref_0.txt", "r") as f:
+    ref_0 = f.read()
+with open("../NetKUp/txt/ref_01.txt", "r") as f:
+    ref_1 = f.read()
+with open("../NetKUp/txt/ref_02.txt", "r") as f:
+    ref_2 = f.read()
+with open("../NetKUp/txt/ref_03.txt", "r") as f:
+    ref_3 = f.read()
+with open("../NetKUp/txt/ref_04.txt", "r") as f:
+    ref_4 = f.read()
+with open("../NetKUp/txt/ref_05.txt", "r") as f:
+    ref_5 = f.read()
+with open("../NetKUp/txt/ref_06.txt", "r") as f:
+    ref_6 = f.read()
+with open("../NetKUp/txt/ref_07.txt", "r") as f:
+    ref_7 = f.read()
+with open("../NetKUp/txt/ref_08.txt", "r") as f:
+    ref_8 = f.read()
+with open("../NetKUp/txt/ref_09.txt", "r") as f:
+    ref_9 = f.read()
 
 with gr.Blocks() as demo:
     gr.HTML("""<div style="text-align: center; max-width: 700px; margin: 0 auto;">
@@ -450,11 +528,13 @@ with gr.Blocks() as demo:
     with gr.Tab("Generation"):
         gr.Markdown("### Examples could be found in the subsequent tab.")
         gr.Markdown("#### Enter OpenAI API Key for further processing...")
+        gr.Markdown("#### Return: Recommended Solutions, Searched Keywords, and Code Generation.")
         input_key = gr.Textbox(label="OpenAI API Key", lines=1, placeholder="sh-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
-        input_1 = gr.Textbox(label="Abstract + Introduction", lines=5, placeholder="Input the contexts...")
+        input_1 = gr.Textbox(label="Abstract w/ Introduction", lines=5, placeholder="Input the contexts...")
         input_2 = gr.Textbox(label="Related Work", lines=5, placeholder="Input the contexts...") 
+        input_3 = gr.Textbox(label="References", lines=5, placeholder="Input the contexts...") 
         with gr.Row():
-            gr.ClearButton([input_1, input_2])
+            gr.ClearButton([input_1, input_2, input_3])
             btn = gr.Button(value="Submit")
         with gr.Row():
             output_0 = gr.Textbox(label="Generate 5 Possible Solutions:", show_copy_button=True, show_label=True, interactive=False)
@@ -467,15 +547,17 @@ with gr.Blocks() as demo:
         """
 
         with gr.Row():
-            output = gr.Textbox(label="Generation with Self-Evaluation", show_copy_button=True, show_label=True)
+            output = gr.Textbox(label="Self-Evaluation with customized metrics", show_copy_button=True, show_label=True)
         with gr.Row():
-            rec_repo = gr.Textbox(label="GitHub Repositories Recommendation", show_copy_button=True, show_label=True)
+            output_eval = gr.Textbox(label="Evaluate with references", show_copy_button=True, show_label=True)
+        with gr.Row():
+            rec_repo = gr.Textbox(label="GitHub Searched Keywords", show_copy_button=True, show_label=True)
         with gr.Row():
             gen_code = gr.Code(language="python", lines=5, label="Code")
 
         # with gr.Row():
         #     output_2 = gr.Textbox(label="Self-Eval", show_copy_button=True)
-        btn.click(fn=main, inputs=[input_key, input_1, input_2], outputs=[output, output_0, rec_repo, gen_code])
+        btn.click(fn=main, inputs=[input_key, input_1, input_2, input_3], outputs=[output, output_0, rec_repo, gen_code, output_eval])
         # btn_copy = gr.Button(value="Copy Generated Methods to Clipboard")
         # btn_copy.click(fn=copy_to_clipboard, inputs=[output_0], outputs=[])
 
@@ -488,12 +570,11 @@ with gr.Blocks() as demo:
    #      btn_com.click(fn=compare_versions, inputs=[], outputs=[com_1, com_2])
     with gr.Tab("Examples"):
         gr.Markdown("## Examples")
-        gr.Markdown("### Two examples are provided below; please select one to auto-populate the inputs.")
-        gr.Markdown("### Kindly select one of the provided examples, then return to the 'Article Updating' mode to assess the outcomes.")
+        gr.Markdown("### Examples are provided below; select one of them to auto-populate the inputs.")
         gr.Examples(
-            examples=[[exin_1, trigger_1], [exin_2, trigger_2]],
+            examples=[[exin_0, trigger_0, ref_0], [exin_1, trigger_1, ref_1], [exin_2, trigger_2, ref_2], [exin_3, trigger_3, ref_3], [exin_4, trigger_4, ref_4], [exin_5, trigger_5, ref_5], [exin_6, trigger_6, ref_6], [exin_7, trigger_7, ref_7], [exin_8, trigger_8, ref_8], [exin_9, trigger_9, ref_9]],
             fn=main,
-            inputs=[input_1, input_2],
+            inputs=[input_1, input_2, input_3],
             outputs = [output],
             # outputs=[output_1, output_2],
             # cache_examples=True,
