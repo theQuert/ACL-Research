@@ -611,6 +611,7 @@ with gr.Blocks(title="Research Methods Geneartion") as demo:
         #     # run_on_click=True,
         #         ),
         
+    """
     gr.HTML("""
             <div align="center">
                 <p>
@@ -624,6 +625,7 @@ with gr.Blocks(title="Research Methods Geneartion") as demo:
             </div>
         """
         )
+    """
 
 demo.launch(server_name="0.0.0.0", server_port=10010)
 
